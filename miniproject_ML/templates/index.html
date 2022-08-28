@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Crop and Fertilizer recommendation System using ML</title>
+ <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+<style>
+
+</style>
+  
+</head>
+
+<body align="center" bgcolor="#E9ECE6" >
+
+ <div class="crop">
+	<h1>Crop Recommendation</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="nitrogen ratio" placeholder="Enter N " required="required" />
+        <br>
+        <input type="text" name="phosphorous ratio" placeholder="P" required="required" /><br>
+		<input type="text" name="potassium ratio" placeholder="K" required="required" /> <br>
+		<input type="text" name="temperature in C" placeholder="Temp" required="required" /> <br>
+        <input type="text" name="humidity in %" placeholder="Humidity" required="required" /> <br>
+        <input type="text" name="ph value" placeholder="PH value" required="required" /> <br>
+        <input type="text" name="rainfall in mm" placeholder="Rainfall" required="required" /> <br>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+<br>
+ <hr>
+ <hr>
+<div>
+    <h1>Fertilizer  Recommendation</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict1')}}"method="post">
+    	<input type="text" name="temperature" placeholder="Enter Temperature in C" required="required" />
+        <br>
+        <input type="text" name="moisture" placeholder="Enter Moisture" required="required" /><br>
+		<input type="text" name="humidity" placeholder="Enter humidity" required="required" /> <br>
+		<input type="text" name="Soil" placeholder="Soil" required="required" /> <br>
+        <input type="text" name="Crop" placeholder="Crop" required="required" /> <br>
+        <input type="text" name="N" placeholder="N" required="required" /> <br>
+        <input type="text" name="P" placeholder="P" required="required" /> <br>
+        <input type="text" name="K" placeholder="K" required="required" /> <br>
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text_fertilizer }}
+</div>
+
+</body>
+</html>
+
